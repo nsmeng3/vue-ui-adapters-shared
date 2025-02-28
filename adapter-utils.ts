@@ -1,14 +1,14 @@
+import { type App } from 'vue';
+
 export function getAdapter<T>(
-  type: AdapterType | string = AdapterTypes.ELEMENT,
-  adapterMap: Record<AdapterType | string, T>
+  type: string = 'element',
+  adapterMap: Record<string, T>
 ): T {
-  return adapterMap[type] || adapterMap[AdapterTypes.ELEMENT];
+  return adapterMap[type] || adapterMap['element'];
 }
 
-export const AdapterTypes = {
-  DEFAULT: 'element',
-  ELEMENT: 'element',
-  ANTDV: 'antdv',
-} as const;
+// 全局注册组件
+export function registerComponent(app: App, name: string, component: any) {
+  app.component(name, component);
+}
 
-export type AdapterType = typeof AdapterTypes[keyof typeof AdapterTypes];
