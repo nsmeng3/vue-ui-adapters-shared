@@ -1,5 +1,3 @@
-// src/adapters/adapter-utils.ts
-
 export function getAdapter<T>(
   type: AdapterType | string = AdapterTypes.ELEMENT,
   adapterMap: Record<AdapterType | string, T>
