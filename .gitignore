@@ -28,5 +28,6 @@ yarn-error.log*
 # 测试和临时文件
 *.test
 *.spec.js
+
 # npm pack 生成的 tarball 文件
 *.tgz
